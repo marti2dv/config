@@ -1,0 +1,42 @@
+!Urxvt configuration
+
+! Background color
+! URxvt*background: #2828FF
+URxvt*background: blue
+
+! Font color
+URxvt*foreground: white
+
+! Transparency 
+URxvt*.transparent: false
+! 0 to 99 darkens, 101 to 200 lightens
+URxvt*.shading: 150
+
+! Other colors
+URxvt*color0: black
+URxvt*color1: red3
+URxvt*color2: green3
+URxvt*color3: yellow3
+URxvt*color4: blue2
+URxvt*color5: magenta3
+URxvt*color6: cyan3
+URxvt*color7: gray90
+URxvt*color8: grey50
+URxvt*color9: red
+URxvt*color10: green
+URxvt*color11: yellow
+URxvt*color12: blue
+URxvt*color13: magenta
+URxvt*color14: cyan
+URxvt*color15: white
+
+! font
+URxvt*.font: xft:Monospace:pixelsize=11:antialias=true:hinting=true
+! URxvt*.letterSpace: 0
+
+! deactivate scrollbar
+URxvt*.scrollBar: false
+
+! emacs settings
+Emacs.pane.menubar.background: black
+Emacs.pane.menubar.foreground: black
