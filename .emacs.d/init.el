@@ -14,9 +14,6 @@
 ;; line numbers
 (global-linum-mode t)
 
-;; hide menu bars
-(menu-bar-mode -1)
-(tool-bar-mode -1)
 
 ;; ------------------EVIL---------------
 ;;evil mode & settings
@@ -55,9 +52,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (define-key evil-normal-state-map "L" 'elscreen-next)
 (define-key evil-normal-state-map "H" 'elscreen-previous)
 
-;; paste from clipboard
-(define-key evil-normal-state-map (kbd "C-v") 'x-clipboard-yank)
-
 ;; ------------------EVIL---------------
 
 
@@ -89,10 +83,11 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 ;; powerline
 (require 'powerline)
-(setq powerline-arrow-shape 'curve)
-(setq powerline-default-separator-dir '(right . left))
-(setq sml/theme 'powerline)
-(sml/setup)
+(powerline-center-evil-theme)
+(set-face-attribute 'mode-line nil
+		    :foreground "White"
+		    :background "MediumBlue"
+		    :box nil)
 
 ;; -------------- JAVASCRIPT ----------------
 ;; json file as js mode
@@ -107,10 +102,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (setq js2-highlight-level 2)
 
 ;; -------------- JAVASCRIPT ----------------
-;; -------------- PYTHON ----------------
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
-;; -------------- PYTHON ----------------
 
 ;; yasnippet and autocomplete
 ;;(require 'yasnippet)
