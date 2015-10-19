@@ -2,12 +2,12 @@
 
 ! Background color
 ! URxvt*background: #2828FF
-URxvt*background: blue
+URxvt*background: #2a2a2a
 
 ! Font color
 URxvt*foreground: white
 
-! Transparency 
+! Transparency
 URxvt*.transparent: false
 ! 0 to 99 darkens, 101 to 200 lightens
 URxvt*.shading: 150
@@ -40,3 +40,10 @@ URxvt*.scrollBar: false
 ! emacs settings
 Emacs.pane.menubar.background: black
 Emacs.pane.menubar.foreground: black
+
+! rofi settings
+rofi.background: #222
+rofi.foreground: #888
+rofi.bordercolor: #222
+rofi.highlightbg: #285577
+rofi.highlightfg: #fff
