@@ -17,6 +17,7 @@ alias nv='nvim'
 alias py='python3'
 alias opn='xdg-open'
 alias reload_xresources='xrdb -merge ~/.Xresources'
+alias gs='git status'
 
 # add personal bin folder to PATH
 if [ -d "$HOME/bin" ] ; then
