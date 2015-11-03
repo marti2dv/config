@@ -1,0 +1,36 @@
+(function() {
+  var fs, path;
+
+  path = require("path");
+
+  fs = require("fs");
+
+  module.exports = function() {
+    var config, defaultConfigPath, err, projectConfigPath;
+    defaultConfigPath = path.normalize(path.join(process.env.HOME || process.env.HOMEPATH, ".jslintrc"));
+    projectConfigPath = path.normalize(path.join(atom.project.getPaths()[0], ".jslintrc"));
+    config = {};
+    try {
+      config = JSON.parse(fs.readFileSync(defaultConfigPath, "utf-8"));
+    } catch (_error) {
+      err = _error;
+      if (defaultConfigPath && err.code !== "ENOENT") {
+        console.log("Error reading config file \"" + defaultConfigPath + "\": " + err);
+      }
+    }
+    try {
+      config = JSON.parse(fs.readFileSync(projectConfigPath, "utf-8"));
+    } catch (_error) {
+      err = _error;
+      if (projectConfigPath && err.code !== "ENOENT") {
+        console.log("Error reading config file \"" + projectConfigPath + "\": " + err);
+      }
+    }
+    return config;
+  };
+
+}).call(this);
+
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAiZmlsZSI6ICIiLAogICJzb3VyY2VSb290IjogIiIsCiAgInNvdXJjZXMiOiBbCiAgICAiL2hvbWUvZGF2aWQvLmF0b20vcGFja2FnZXMvanNsaW50L2xpYi9jb25maWcuY29mZmVlIgogIF0sCiAgIm5hbWVzIjogW10sCiAgIm1hcHBpbmdzIjogIkFBQUE7QUFBQSxNQUFBLFFBQUE7O0FBQUEsRUFBQSxJQUFBLEdBQU8sT0FBQSxDQUFRLE1BQVIsQ0FBUCxDQUFBOztBQUFBLEVBQ0EsRUFBQSxHQUFLLE9BQUEsQ0FBUSxJQUFSLENBREwsQ0FBQTs7QUFBQSxFQUdBLE1BQU0sQ0FBQyxPQUFQLEdBQWlCLFNBQUEsR0FBQTtBQUNmLFFBQUEsaURBQUE7QUFBQSxJQUFBLGlCQUFBLEdBQW9CLElBQUksQ0FBQyxTQUFMLENBQWUsSUFBSSxDQUFDLElBQUwsQ0FBVSxPQUFPLENBQUMsR0FBRyxDQUFDLElBQVosSUFBb0IsT0FBTyxDQUFDLEdBQUcsQ0FBQyxRQUExQyxFQUFvRCxXQUFwRCxDQUFmLENBQXBCLENBQUE7QUFBQSxJQUNBLGlCQUFBLEdBQW9CLElBQUksQ0FBQyxTQUFMLENBQWUsSUFBSSxDQUFDLElBQUwsQ0FBVSxJQUFJLENBQUMsT0FBTyxDQUFDLFFBQWIsQ0FBQSxDQUF3QixDQUFBLENBQUEsQ0FBbEMsRUFBc0MsV0FBdEMsQ0FBZixDQURwQixDQUFBO0FBQUEsSUFFQSxNQUFBLEdBQVMsRUFGVCxDQUFBO0FBSUE7QUFDRSxNQUFBLE1BQUEsR0FBUyxJQUFJLENBQUMsS0FBTCxDQUFXLEVBQUUsQ0FBQyxZQUFILENBQWdCLGlCQUFoQixFQUFtQyxPQUFuQyxDQUFYLENBQVQsQ0FERjtLQUFBLGNBQUE7QUFHRSxNQURJLFlBQ0osQ0FBQTtBQUFBLE1BQUEsSUFBa0YsaUJBQUEsSUFBc0IsR0FBRyxDQUFDLElBQUosS0FBYyxRQUF0SDtBQUFBLFFBQUEsT0FBTyxDQUFDLEdBQVIsQ0FBWSw4QkFBQSxHQUFpQyxpQkFBakMsR0FBcUQsTUFBckQsR0FBOEQsR0FBMUUsQ0FBQSxDQUFBO09BSEY7S0FKQTtBQVFBO0FBQ0UsTUFBQSxNQUFBLEdBQVMsSUFBSSxDQUFDLEtBQUwsQ0FBVyxFQUFFLENBQUMsWUFBSCxDQUFnQixpQkFBaEIsRUFBbUMsT0FBbkMsQ0FBWCxDQUFULENBREY7S0FBQSxjQUFBO0FBR0UsTUFESSxZQUNKLENBQUE7QUFBQSxNQUFBLElBQWtGLGlCQUFBLElBQXNCLEdBQUcsQ0FBQyxJQUFKLEtBQWMsUUFBdEg7QUFBQSxRQUFBLE9BQU8sQ0FBQyxHQUFSLENBQVksOEJBQUEsR0FBaUMsaUJBQWpDLEdBQXFELE1BQXJELEdBQThELEdBQTFFLENBQUEsQ0FBQTtPQUhGO0tBUkE7QUFhQSxXQUFPLE1BQVAsQ0FkZTtFQUFBLENBSGpCLENBQUE7QUFBQSIKfQ==
+
+//# sourceURL=/home/david/.atom/packages/jslint/lib/config.coffee

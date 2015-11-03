@@ -1,0 +1,44 @@
+{
+  "name": "blue-gray-syntax",
+  "theme": "syntax",
+  "version": "0.2.2",
+  "description": "A dark (blue gray) syntax theme for Atom",
+  "keywords": [
+    "syntax",
+    "theme",
+    "gray",
+    "dark",
+    "blue"
+  ],
+  "author": {
+    "name": "Rabah Ghodbane"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arabsight/atom-blue-grey-syntax.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "readme": "# blue-gray-syntax theme\n\nA dark (blue gray) syntax theme for Atom\n\n```bash\napm install blue-gray-syntax\n```\n\n![](https://raw.githubusercontent.com/arabsight/atom-blue-grey-syntax/master/thumbnail.png)\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/arabsight/atom-blue-grey-syntax/issues"
+  },
+  "homepage": "https://github.com/arabsight/atom-blue-grey-syntax#readme",
+  "_id": "blue-gray-syntax@0.2.2",
+  "_shasum": "41d50b23b91fddb0604d345fed7ce5fa553d0f98",
+  "_resolved": "file:../d-115103-8157-1hzk0xm/package.tgz",
+  "_from": "../d-115103-8157-1hzk0xm/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}
