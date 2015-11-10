@@ -17,7 +17,7 @@
 
 // style the background color of the tree view
 .tree-view {
-  // background-color: whitesmoke;
+  //background-color: whitesmoke;
 }
 
 // style the background and foreground colors on the atom-text-editor-element itself
@@ -28,5 +28,27 @@ atom-text-editor {
 
 // To style other content in the text editor's shadow DOM, use the ::shadow expression
 atom-text-editor::shadow .cursor {
-  // border-color: red;
+  border-color: red;
+}
+
+atom-text-editor.vim-mode.normal-mode,
+atom-text-editor.vim-mode.operator-pending-mode,
+atom-text-editor.vim-mode.visual-mode
+{
+  &, // only keep this if you want to see the cursor on non-focused tabs
+  &.is-focused {
+    &::shadow, // shadow-DOM enabled
+    &          // shadow-DOM disabled
+    {
+      /* cursor color */
+      .cursor {
+        // cursor styles
+        background-color: red;
+        visibility: visible !important;
+      }
+      .blink-off .cursor {
+        // cursor style while blinking (if you so desire)
+      }
+    }
+  }
 }
